@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lexend+Deca&family=Lexend:wght@300&family=Monoton&family=Montserrat:wght@500&family=Open+Sans&family=Pacifico&family=Poppins&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+                'lexend-deca': 'Lexend Deca',
+            },
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend-deca dark:bg-slate-900 dark:text-white">
+
+    <div class="container mx-auto my-20 border-2 p-5 rounded-xl">
+        <h1 class="text-2xl font-semibold mb-5">New Post</h1>
+        <div class="">
+            <form>
+                <label>
+                    <div class="text-xl">Title</div>
+                    <input type="text" id="title-value" class="p-2 my-2 rounded-lg border-2 w-full dark:bg-slate-800">
+                </label>
+                <label>
+                    <div class="text-xl mb-2">Content</div>
+                    <textarea name="content" id="body-value" cols="30" rows="10" class="rounded-lg border-2 mb-2 w-full p-2 dark:bg-slate-800"></textarea>
+                </label>
+                <button type="submit" class="py-2 px-4 rounded-lg text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800">Add Post</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="darkToggle py-2 px-4 cursor-pointer bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white absolute top-0 right-0">Dark Mode</div>
+
+
+    <div id="post-list" class="post-list container my-20 border-2 rounded-xl p-5 mx-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4">
+
+        <div class="card col-span-3 border-2 rounded-lg p-5">
+            <h3 class="text-xl font-semibold">Card Title</h3>
+            <p class="text-sm text-slate-700 dark:text-slate-400">Card subtitle</p>
+            <p class="my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veniam nam consequuntur totam magnam repudiandae ipsum.</p>
+            <div class="links flex gap-6">
+                <a href="#" class="text-blue-700">Edit</a>
+                <a href="#" class="text-blue-700">Delete</a>
+            </div>
+        </div>
+
+        <div class="card col-span-3 border-2 rounded-lg p-5">
+            <h3 class="text-xl font-semibold">Card Title</h3>
+            <p class="text-sm text-slate-700 dark:text-slate-400">Card subtitle</p>
+            <p class="my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veniam nam consequuntur totam magnam repudiandae ipsum.</p>
+            <div class="links flex gap-6">
+                <a href="#" class="text-blue-700">Edit</a>
+                <a href="#" class="text-blue-700">Delete</a>
+            </div>
+        </div>
+
+        <div class="card col-span-3 border-2 rounded-lg p-5">
+            <h3 class="text-xl font-semibold">Card Title</h3>
+            <p class="text-sm text-slate-700 dark:text-slate-400">Card subtitle</p>
+            <p class="my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veniam nam consequuntur totam magnam repudiandae ipsum.</p>
+            <div class="links flex gap-6">
+                <a href="#" class="text-blue-700">Edit</a>
+                <a href="#" class="text-blue-700">Delete</a>
+            </div>
+        </div>
+
+        <div class="card col-span-3 border-2 rounded-lg p-5">
+            <h3 class="text-xl font-semibold">Card Title</h3>
+            <p class="text-sm text-slate-700 dark:text-slate-400">Card subtitle</p>
+            <p class="my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veniam nam consequuntur totam magnam repudiandae ipsum.</p>
+            <div class="links flex gap-6">
+                <a href="#" class="text-blue-700">Edit</a>
+                <a href="#" class="text-blue-700">Delete</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelector('.darkToggle').addEventListener('click', function(){
+            let html = document.querySelector('html')
+            html.classList.toggle('dark');
+            if(this.innerHTML.includes('Dark Mode')){
+                this.innerHTML = 'Light Mode';
+            } else if (this.innerHTML.includes('Light Mode')){
+                this.innerHTML = 'Dark Mode'
+            }
+        })
+    </script>
+  </body>
+</html>

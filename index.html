@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lexend+Deca&family=Lexend:wght@300&family=Monoton&family=Montserrat:wght@500&family=Open+Sans&family=Pacifico&family=Poppins&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        // darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              "lexend-deca": "Lexend Deca",
+            },
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend-deca dark:bg-slate-900 dark:text-white">
+
+    <div class="container my-20 mx-auto rounded-xl p-5">
+      <h1 class="text-2xl font-bold">Orca mDb</h1>
+      <form>
+        <div class="relative my-2 rounded-lg flex gap-2">
+          <label>
+            <input
+              id="inputSearch"
+              type="text"
+              class="w-full rounded-lg py-2 pl-3 pr-20 bg-slate-800"
+              placeholder="Search movie"
+              maxlength="60"
+            />
+          </label>
+          <button type="submit" id="buttonSearch" class="right-0 py-2 px-4 bg-blue-600 rounded-lg active:bg-blue-700">Search</button>
+        </div>
+      </form>
+
+      <div id="movieContainer" class="mt-10 flex flex-wrap gap-4">
+        <div class="w-full h-96 rounded-lg bg-slate-800 flex items-center justify-center">Cari film</div>
+      </div>
+
+
+      <div id="overlayModal" class="fixed -top-full left-0 w-screen h-screen bg-slate-950/70 flex items-center justify-center">
+      </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+    <!-- <script>
+      document
+        .querySelector(".darkToggle")
+        .addEventListener("click", function () {
+          let html = document.querySelector("html");
+          html.classList.toggle("dark");
+          if (this.innerHTML.includes("Dark Mode")) {
+            this.innerHTML = "Light Mode";
+          } else if (this.innerHTML.includes("Light Mode")) {
+            this.innerHTML = "Dark Mode";
+          }
+        });
+    </script> -->
+  </body>
+</html>
