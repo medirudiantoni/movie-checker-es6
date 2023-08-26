@@ -17,23 +17,24 @@ function movieCard(movie) {
 }
 
 function movieDetailModal(movie) {
-  return `<div class="container containerDetail h-screen md:h-[600px] bg-slate-800 relative p-5 md:p-10">
-                <div class="modalCloser absolute top-0 right-0 py-2 px-4 bg-red-600 hover:bg-red-700 active:bg-red-800 cursor-pointer">Close</div>
+  return `<div class="container containerDetail h-[75%] md:h-[600px]
+  bg-slate-200 dark:bg-slate-800 relative p-5 md:p-10">
+                <div class="modalCloser absolute top-0 right-0 py-2 text-white px-4 bg-red-600 hover:bg-red-700 active:bg-red-800 cursor-pointer">Close</div>
 
-                <div class=" w-full h-full flex flex-col md:flex-row gap-5 justify-start md:pt-10 overflow-y-scroll sm:overflow-hidden">
-                    <div class="w-[300px] h-full flex">
+                <div class=" w-full h-full flex flex-col md:flex-row gap-5 justify-start pt-10 overflow-y-scroll sm:overflow-hidden">
+                    <div class="w-[200px] md:w-[300px] h-full flex">
                         <img src="${movie.Poster}" alt="poster" class="w-full h-fit object-cover">
                     </div>
                     <div class="max-w-[400px]">
                         <h1 class="text-xl border-b pb-2 mb-2">${movie.Title}</h1>
-                        <ul>
-                            <li class="my-2">Year: ${movie.Year}</li>
-                            <li class="my-2">Genre: ${movie.Genre}</li>
-                            <li class="my-2">Director: ${movie.Director}</li>
-                            <li class="my-2">Writer: ${movie.Writer}</li>
-                            <li class="my-2">Actors: ${movie.Actors}</li>
-                            <li class="my-2">Awards: ${movie.Awards}</li>
-                            <li class="my-2">Plot: ${movie.Plot}</li>
+                        <ul class="mb-20">
+                            <li class="my-2"><strong>Year:</strong> ${movie.Year}</li>
+                            <li class="my-2"><strong>Genre:</strong> ${movie.Genre}</li>
+                            <li class="my-2"><strong>Director:</strong> ${movie.Director}</li>
+                            <li class="my-2"><strong>Writer:</strong> ${movie.Writer}</li>
+                            <li class="my-2"><strong>Actors:</strong> ${movie.Actors}</li>
+                            <li class="my-2"><strong>Awards:</strong> ${movie.Awards}</li>
+                            <li class="my-2"><strong>Plot:</strong> ${movie.Plot}</li>
                         </ul>
                     </div>
                 </div>
@@ -81,8 +82,7 @@ document.addEventListener("click", function (e) {
     document.body.style.overflowY = 'hidden';
     const imdbid = e.target.getAttribute("data-imdbid");
     overlayModal.innerHTML = loadingSpinAnimation();
-    overlayModal.classList.add("translate-y-[195%]");
-    overlayModal.classList.add("sm:translate-y-full");
+    overlayModal.classList.add("translate-y-full");
     const movieDetail =
       fetch(`https://www.omdbapi.com/?apikey=54ef65bc&i=${imdbid}
         `);
@@ -98,8 +98,7 @@ document.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("modalCloser")) {
     document.body.style.overflowY = 'scroll';
-    overlayModal.classList.remove("translate-y-[195%]");
-    overlayModal.classList.remove("sm:translate-y-full");
+    overlayModal.classList.remove("translate-y-full");
     overlayModal.innerHTML = "";
   }
 });

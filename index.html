@@ -13,7 +13,7 @@
     />
     <script>
       tailwind.config = {
-        // darkMode: 'class',
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -27,7 +27,9 @@
       };
     </script>
   </head>
-  <body class="font-lexend-deca dark:bg-slate-900 dark:text-white">
+  <body class="font-lexend-deca bg-slate-200 dark:bg-slate-900 dark:text-white">
+
+    <div class="darkToggle py-1.5 px-3 cursor-pointer bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white fixed z-50 bottom-0 right-0 text-sm">Dark Mode</div>
 
     <div class="container mx-auto rounded-xl p-5">
       <h1 class="text-2xl font-bold">Orca mDb</h1>
@@ -37,28 +39,28 @@
             <input
               id="inputSearch"
               type="text"
-              class="w-full rounded-lg py-2 pl-3 pr-20 bg-slate-800"
+              class="w-full rounded-lg py-2 pl-3 pr-20 dark:bg-slate-800"
               placeholder="Search movie"
               maxlength="60"
             />
           </label>
-          <button type="submit" id="buttonSearch" class="right-0 py-2 px-4 bg-blue-600 rounded-lg active:bg-blue-700">Search</button>
+          <button type="submit" id="buttonSearch" class="right-0 py-2 px-4 text-white bg-blue-600 rounded-lg active:bg-blue-700">Search</button>
         </div>
       </form>
 
       <div id="movieContainer" class="mt-10 flex flex-wrap gap-4">
-        <div class="w-full h-96 rounded-lg bg-slate-800 flex items-center justify-center">Cari film</div>
+        <div class="w-full h-96 rounded-lg bg-slate-300 dark:bg-slate-800 flex items-center justify-center">Cari film</div>
       </div>
 
 
-      <div id="overlayModal" class="fixed -top-[200%] sm:-top-full left-0 w-screen h-screen bg-slate-950/70 flex items-center justify-center">
+      <div id="overlayModal" class="fixed -top-full left-0 w-screen h-screen bg-slate-950/70 flex items-center justify-center">
       </div>
 
 
     </div>
 
     <script src="script.js"></script>
-    <!-- <script>
+    <script>
       document
         .querySelector(".darkToggle")
         .addEventListener("click", function () {
@@ -70,6 +72,6 @@
             this.innerHTML = "Dark Mode";
           }
         });
-    </script> -->
+    </script>
   </body>
 </html>
