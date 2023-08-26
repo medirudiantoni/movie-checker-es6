@@ -4,7 +4,7 @@ const movieContainer = document.getElementById("movieContainer");
 const overlayModal = document.getElementById("overlayModal");
 
 function movieCard(movie) {
-  return `<div class="w-40 md:w-56 h-fit mb-5 relative">
+  return `<div class="w-32 md:w-56 h-fit mb-5 relative">
                 <div class="detailButton absolute top-0 left-0 w-full h-full cursor-pointer" data-imdbid="${movie.imdbID}"></div>
                 <div class="w-full h-fit md:h-[320px] flex bg-slate-950">
                     <img src="${movie.Poster}" alt="poster" class="w-full h-full object-cover">
@@ -17,7 +17,7 @@ function movieCard(movie) {
 }
 
 function movieDetailModal(movie) {
-  return `<div class="container containerDetail h-screen md:h-[600px] bg-slate-800 relative p-5 md:p-10">
+  return `<div class="container containerDetail overflow-y-scroll h-screen md:h-[600px] bg-slate-800 relative p-5 md:p-10">
                 <div class="modalCloser absolute top-0 right-0 py-2 px-4 bg-red-600 hover:bg-red-700 active:bg-red-800 cursor-pointer">Close</div>
 
                 <div class=" w-full h-full flex flex-col md:flex-row gap-5 justify-start md:pt-10">
