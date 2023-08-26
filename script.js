@@ -82,7 +82,7 @@ document.addEventListener("click", function (e) {
     document.body.style.overflowY = 'hidden';
     const imdbid = e.target.getAttribute("data-imdbid");
     overlayModal.innerHTML = loadingSpinAnimation();
-    overlayModal.classList.add("translate-y-full");
+    overlayModal.classList.add("translate-x-full");
     const movieDetail =
       fetch(`https://www.omdbapi.com/?apikey=54ef65bc&i=${imdbid}
         `);
@@ -98,7 +98,7 @@ document.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("modalCloser")) {
     document.body.style.overflowY = 'scroll';
-    overlayModal.classList.remove("translate-y-full");
+    overlayModal.classList.remove("translate-x-full");
     overlayModal.innerHTML = "";
   }
 });
