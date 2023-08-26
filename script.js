@@ -58,7 +58,7 @@ buttonSearch.addEventListener("click", function (event) {
   movieContainer.innerHTML = loadingSpinAnimation();
   const inputValue = inputSearch.value;
   const fetchValue =
-    fetch(`http://www.omdbapi.com/?apikey=54ef65bc&s=${inputValue}
+    fetch(`https://www.omdbapi.com/?apikey=54ef65bc&s=${inputValue}
     `);
   fetchValue
     .then((res) => res.json())
@@ -82,7 +82,7 @@ document.addEventListener("click", function (e) {
     overlayModal.innerHTML = loadingSpinAnimation();
     overlayModal.classList.add("translate-y-full");
     const movieDetail =
-      fetch(`http://www.omdbapi.com/?apikey=54ef65bc&i=${imdbid}
+      fetch(`https://www.omdbapi.com/?apikey=54ef65bc&i=${imdbid}
         `);
     movieDetail
       .then((res) => res.json())
